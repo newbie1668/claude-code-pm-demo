@@ -12,6 +12,7 @@ export type StepData = {
   description?: string;
   whatToHighlight?: string;
   prompt?: { label: string; text: string };
+  prompts?: { label: string; text: string }[];
   callout?: Callout;
 };
 
@@ -70,10 +71,11 @@ export const DEMO_SECTIONS: DemoSection[] = [
       {
         title: "Install Claude Code (show live or have pre-installed)",
         description: "Open your terminal. Run the install command, then navigate to the demo repo and launch.",
-        prompt: {
-          label: "Install command",
-          text: "npm install -g @anthropic-ai/claude-code",
-        },
+        prompts: [
+          { label: "macOS, Linux, WSL", text: "curl -fsSL https://claude.ai/install.sh | bash" },
+          { label: "Windows PowerShell", text: "irm https://claude.ai/install.ps1 | iex" },
+          { label: "Windows CMD", text: "curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd" },
+        ],
         callout: {
           type: "tip",
           icon: "💡",

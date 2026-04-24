@@ -82,6 +82,9 @@ export default function SectionCard({ section, defaultOpen = false }: Props) {
                     {step.prompt && (
                       <PromptBlock label={step.prompt.label} text={step.prompt.text} />
                     )}
+                    {step.prompts && step.prompts.map((p, pi) => (
+                      <PromptBlock key={pi} label={p.label} text={p.text} />
+                    ))}
                     {step.whatToHighlight && (
                       <p className="text-sm mt-3" style={{ color: 'var(--text)' }}>
                         <span className="font-bold">What to highlight: </span>
