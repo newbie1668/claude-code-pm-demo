@@ -27,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${fraunces.variable} ${dmSans.variable} min-h-screen`}>
+      <body className={`${fraunces.variable} ${dmSans.variable} min-h-screen`} style={{background: '#f9f9fb', color: '#18181f'}}>
         {children}
       </body>
     </html>

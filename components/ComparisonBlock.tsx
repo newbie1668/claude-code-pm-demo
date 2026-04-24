@@ -11,18 +11,18 @@ const ROWS = [
 
 export default function ComparisonBlock() {
   return (
-    <section className="py-24 px-6" style={{background: 'var(--bg)'}}>
+    <section className="py-24 px-6" style={{background: 'var(--surface)'}}>
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-3" style={{color: 'var(--text)', fontFamily: 'var(--font-heading)', letterSpacing: '-0.02em', lineHeight: 1.1}}>
+        <h2 style={{fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, textAlign: 'center', marginBottom: '0.75rem', letterSpacing: '-0.02em', lineHeight: 1.1, color: 'var(--text)'}}>
           You thought Claude was just a dev tool.
         </h2>
         <p className="text-center mb-12 text-lg" style={{color: 'var(--muted)'}}>
           It&apos;s actually just the right way to interact with LLMs.
         </p>
 
-        <div className="rounded-xl overflow-hidden" style={{border: '1px solid var(--border)'}}>
+        <div className="rounded-2xl overflow-hidden" style={{border: '1px solid var(--border)', boxShadow: 'var(--shadow-md)'}}>
           {/* Header row */}
-          <div className="grid grid-cols-3 text-xs font-bold uppercase tracking-widest px-5 py-3" style={{background: 'var(--surface2)', borderBottom: '1px solid var(--border)', color: 'var(--muted)'}}>
+          <div className="grid grid-cols-3 text-xs font-bold uppercase tracking-widest px-6 py-4" style={{background: 'var(--surface2)', borderBottom: '1px solid var(--border)', color: 'var(--muted)'}}>
             <div>Capability</div>
             <div>ChatGPT / Chat LLMs</div>
             <div style={{color: 'var(--accent)'}}>Claude Code</div>
@@ -31,15 +31,21 @@ export default function ComparisonBlock() {
           {ROWS.map((row, i) => (
             <div
               key={i}
-              className="grid grid-cols-3 px-5 py-3 text-sm"
+              className="grid grid-cols-3 px-6 py-3.5 text-sm"
               style={{
                 borderBottom: i < ROWS.length - 1 ? '1px solid var(--border)' : 'none',
                 background: i % 2 === 0 ? 'var(--surface)' : 'var(--bg)',
               }}
             >
-              <div className="font-medium" style={{color: 'var(--text)'}}>{row.capability}</div>
-              <div style={{color: 'var(--accent4)'}}>{row.chatgpt}</div>
-              <div style={{color: 'var(--accent3)'}}>{row.claudecode}</div>
+              <div className="font-semibold" style={{color: 'var(--text)'}}>{row.capability}</div>
+              <div className="flex items-center gap-2" style={{color: 'var(--accent4)'}}>
+                <span style={{fontSize: '0.65rem'}}>✕</span>
+                {row.chatgpt}
+              </div>
+              <div className="flex items-center gap-2" style={{color: 'var(--accent3)'}}>
+                <span style={{fontSize: '0.65rem'}}>✓</span>
+                {row.claudecode}
+              </div>
             </div>
           ))}
         </div>

@@ -11,9 +11,9 @@ const STATS = [
 
 export default function StatCards() {
   return (
-    <section className="py-24 px-6" style={{background: 'var(--surface)'}}>
+    <section className="py-24 px-6" style={{background: 'var(--bg)'}}>
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-3" style={{color: 'var(--text)', fontFamily: 'var(--font-heading)', letterSpacing: '-0.02em', lineHeight: 1.1}}>
+        <h2 style={{fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, textAlign: 'center', marginBottom: '0.75rem', letterSpacing: '-0.02em', lineHeight: 1.1, color: 'var(--text)'}}>
           What changes for you as a PM
         </h2>
         <p className="text-center mb-12 text-lg" style={{color: 'var(--muted)'}}>
@@ -22,21 +22,21 @@ export default function StatCards() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {STATS.map((stat, i) => (
-            <div key={i} className="rounded-xl p-6 flex flex-col gap-3" style={{background: 'var(--bg)', border: '1px solid var(--border)'}}>
+            <div key={i} className="rounded-2xl p-6 flex flex-col gap-4" style={{background: 'var(--surface)', border: '1px solid var(--border)', boxShadow: 'var(--shadow-sm)'}}>
               <div>
                 <p className="font-semibold text-sm" style={{color: 'var(--text)'}}>{stat.task}</p>
-                <p className="text-xs mt-0.5" style={{color: 'var(--muted)'}}>{stat.detail}</p>
+                <p className="text-xs mt-1" style={{color: 'var(--muted)'}}>{stat.detail}</p>
               </div>
 
-              <div className="flex items-center gap-3 mt-1">
-                <div className="flex-1 text-center">
-                  <p className="text-lg font-bold line-through" style={{color: 'var(--muted)'}}>{stat.before}</p>
+              <div className="flex items-center gap-3 mt-auto">
+                <div className="flex-1 text-center py-2 rounded-xl" style={{background: 'var(--surface2)'}}>
+                  <p className="text-base font-bold line-through" style={{color: 'var(--muted)'}}>{stat.before}</p>
                   <p className="text-xs mt-0.5" style={{color: 'var(--muted)'}}>before</p>
                 </div>
-                <span className="text-xl" style={{color: 'var(--border)'}}>→</span>
-                <div className="flex-1 text-center">
-                  <p className="text-2xl font-black" style={{color: 'var(--accent3)'}}>{stat.after}</p>
-                  <p className="text-xs mt-0.5" style={{color: 'var(--muted)'}}>with Claude Code</p>
+                <span style={{color: 'var(--border)', fontSize: '1.25rem'}}>→</span>
+                <div className="flex-1 text-center py-2 rounded-xl" style={{background: 'var(--accent3-light)'}}>
+                  <p className="text-xl font-black" style={{color: 'var(--accent3)'}}>{stat.after}</p>
+                  <p className="text-xs mt-0.5" style={{color: 'var(--accent3)'}}>with Claude Code</p>
                 </div>
               </div>
             </div>
@@ -50,8 +50,8 @@ export default function StatCards() {
         <div className="text-center mt-8">
           <Link
             href="/instructions"
-            className="inline-flex items-center gap-2 font-semibold px-8 py-4 rounded-xl transition-colors text-lg"
-            style={{background: 'var(--accent)', color: '#0f0f11'}}
+            className="inline-flex items-center gap-2 font-semibold px-8 py-4 rounded-xl transition-all text-lg"
+            style={{background: '#18181f', color: '#ffffff', boxShadow: 'var(--shadow-md)', letterSpacing: '-0.01em'}}
           >
             Let&apos;s get started →
           </Link>

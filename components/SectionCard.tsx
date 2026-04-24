@@ -6,10 +6,10 @@ import Callout from "./Callout";
 import type { DemoSection } from "@/lib/demo-sections";
 
 const COLOR_STYLES = {
-  orange: { bg: 'rgba(212,168,83,0.15)', color: '#d4a853', border: 'rgba(212,168,83,0.25)' },
-  purple: { bg: 'rgba(124,106,247,0.15)', color: '#7c6af7', border: 'rgba(124,106,247,0.25)' },
-  green:  { bg: 'rgba(62,207,142,0.15)',  color: '#3ecf8e', border: 'rgba(62,207,142,0.25)' },
-  red:    { bg: 'rgba(225,87,89,0.12)',   color: '#e15759', border: 'rgba(225,87,89,0.2)' },
+  orange: { bg: 'var(--accent-light)',  color: 'var(--accent)',  border: 'rgba(184,134,30,0.25)' },
+  purple: { bg: 'var(--accent2-light)', color: 'var(--accent2)', border: 'rgba(79,63,199,0.2)' },
+  green:  { bg: 'var(--accent3-light)', color: 'var(--accent3)', border: 'rgba(23,150,92,0.2)' },
+  red:    { bg: 'var(--accent4-light)', color: 'var(--accent4)', border: 'rgba(192,52,55,0.2)' },
 };
 
 type Props = {
@@ -22,7 +22,7 @@ export default function SectionCard({ section, defaultOpen = false }: Props) {
   const cs = COLOR_STYLES[section.color];
 
   return (
-    <div className="rounded-xl overflow-hidden" style={{ border: '1px solid var(--border)' }}>
+    <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid var(--border)', boxShadow: open ? 'var(--shadow-md)' : 'var(--shadow-sm)', background: 'var(--surface)' }}>
       {/* Header */}
       <button
         onClick={() => setOpen(!open)}
@@ -74,7 +74,7 @@ export default function SectionCard({ section, defaultOpen = false }: Props) {
 
                 {/* Step body */}
                 <div className="flex-1 pb-2">
-                  <div className="rounded-xl p-4" style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
+                  <div className="rounded-xl p-4" style={{ background: 'var(--surface)', border: '1px solid var(--border)', boxShadow: 'var(--shadow-sm)' }}>
                     <h3 className="text-sm font-semibold mb-2" style={{ color: 'var(--text)' }}>{step.title}</h3>
                     {step.description && (
                       <p className="text-sm leading-relaxed whitespace-pre-line mb-3" style={{ color: 'var(--muted)' }}>{step.description}</p>

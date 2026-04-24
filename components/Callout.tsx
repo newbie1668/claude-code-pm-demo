@@ -2,22 +2,22 @@ import type { Callout as CalloutData } from "@/lib/demo-sections";
 
 const STYLES = {
   tip: {
-    bg: 'rgba(62,207,142,0.08)',
-    border: 'rgba(62,207,142,0.2)',
-    titleColor: '#3ecf8e',
-    bodyColor: '#a8d8c4',
+    bg: 'var(--accent3-light)',
+    border: 'rgba(23,150,92,0.2)',
+    titleColor: 'var(--accent3)',
+    bodyColor: '#2d6b4f',
   },
   warning: {
-    bg: 'rgba(212,168,83,0.08)',
-    border: 'rgba(212,168,83,0.2)',
-    titleColor: '#d4a853',
-    bodyColor: '#d4bb8a',
+    bg: 'var(--accent-light)',
+    border: 'rgba(184,134,30,0.25)',
+    titleColor: 'var(--accent)',
+    bodyColor: '#7a5a18',
   },
   info: {
-    bg: 'rgba(124,106,247,0.08)',
-    border: 'rgba(124,106,247,0.2)',
-    titleColor: '#7c6af7',
-    bodyColor: '#b0a8f0',
+    bg: 'var(--accent2-light)',
+    border: 'rgba(79,63,199,0.2)',
+    titleColor: 'var(--accent2)',
+    bodyColor: '#3a2e8c',
   },
 };
 
