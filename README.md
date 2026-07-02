@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Claude Code for PMs
 
-## Getting Started
+Demo site and run-of-show for teaching product managers how to use Claude Code as a product workflow tool, not just a coding assistant.
 
-First, run the development server:
+Live demo: https://claude-code-pm-demo.vercel.app
+
+## Product Read
+
+- Problem: Many PMs understand ChatGPT, but they have not felt the step-change that happens when an AI assistant can read files, write artifacts, run commands, and coordinate parallel work.
+- User: Product managers who are strong in product thinking but new to terminal-based AI coding agents.
+- Product bet: A guided demo will make the shift from "AI chat" to "AI working environment" concrete faster than an article or slide deck.
+- What shipped: A Next.js demo site with a narrative landing page and a detailed demo playbook for a 50-60 minute PM workshop.
+- What it proves: I can turn a fuzzy enablement idea into a working artifact with product framing, live demo structure, and reusable instructions.
+
+## What It Shows
+
+- Why Claude Code is different from a chat-only workflow.
+- How PMs can use agents to synthesize interviews, process meeting transcripts, draft PRDs, review specs, and generate reusable artifacts.
+- How to structure a demo so non-technical PMs understand the workflow without getting lost in the terminal.
+- How product work changes when the assistant has project context and can act on files directly.
+
+## Demo Flow
+
+The playbook is organized into eight sections:
+
+1. Evolution narrative: why the shift matters.
+2. Install and orient: terminal basics without making the audience feel behind.
+3. Process real PM data: interviews, business context, and templates.
+4. Parallel agents: process multiple transcripts at once.
+5. Specialized sub-agents: engineer, executive, and user researcher perspectives.
+6. PRD writing: Socratic sharpening before artifact generation.
+7. Competitive research: market context without tab-sprawl.
+8. Operating model: how to make the workflow repeatable.
+
+## Run Locally
+
+Requires Node.js 20 or newer.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Useful commands:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run lint
+```
 
-## Learn More
+## Useful Files
 
-To learn more about Next.js, take a look at the following resources:
+| File | Purpose |
+| --- | --- |
+| `app/page.tsx` | Landing page composition |
+| `app/instructions/page.tsx` | Detailed PM demo playbook |
+| `lib/demo-sections.ts` | Source content for the eight demo sections |
+| `components/` | Reusable visual components |
+| `AGENTS.md` | Agent handoff for coding assistants |
+| `CLAUDE.md` | Claude Code project context |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Why This Exists
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This is a portfolio artifact for PM-builder work. It is not trying to be a large SaaS product. It is a working demo that packages a point of view: PMs who can use AI agents well will move from documents and meetings to faster product learning loops.
